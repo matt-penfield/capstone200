@@ -17,11 +17,11 @@ Generate a fake dataset as a JSON file (src/data/metrics.json). 12 months of dat
 - v-app-bar at the top with a dashboard title and a month picker. 
 - the month picker should default to showing all months
 - When a specific month is selected, all cards and charts filter to that month. When "All"  is selected, show the full year. 
-- Below the app bar: a row of 4 summary cards (v-card) showing the key metrics (revenue, visitors, conversions, orders)
-- Below the cards: a row of 2 charts 
-    - Left: Bar chart showing monthly revenue
-    - Right: Line chart showing visitors over time
-- Below that: one full-width area chart showing conversion trend
+- Below the app bar: a row of 4 summary cards (v-card) showing the key metrics (shipment volume, on-time delivery rates, regional performance, open exceptions)
+- Below the cards: 3 charts 
+    - Left: Bar chart showing shipment volume
+    - Right: Line chart showing on-time delivery rates over time
+- Below that: one full-width area chart showing open exceptions trend
 - use v-container, v-row, v-col, for responsive grid layout
 
 ## Interactions
