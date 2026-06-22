@@ -1,0 +1,98 @@
+[
+  {
+    "month": "Jan",
+    "year": 2025,
+    "shipmentVolume": 12400,
+    "onTimeDeliveryRate": 94.2,
+    "regionalPerformance": 87.5,
+    "openExceptions": 142
+  },
+  {
+    "month": "Feb",
+    "year": 2025,
+    "shipmentVolume": 13100,
+    "onTimeDeliveryRate": 93.8,
+    "regionalPerformance": 89.1,
+    "openExceptions": 156
+  },
+  {
+    "month": "Mar",
+    "year": 2025,
+    "shipmentVolume": 13850,
+    "onTimeDeliveryRate": 92.5,
+    "regionalPerformance": 86.3,
+    "openExceptions": 168
+  },
+  {
+    "month": "Apr",
+    "year": 2025,
+    "shipmentVolume": 14200,
+    "onTimeDeliveryRate": 93.1,
+    "regionalPerformance": 88.7,
+    "openExceptions": 174
+  },
+  {
+    "month": "May",
+    "year": 2025,
+    "shipmentVolume": 15300,
+    "onTimeDeliveryRate": 91.6,
+    "regionalPerformance": 85.9,
+    "openExceptions": 189
+  },
+  {
+    "month": "Jun",
+    "year": 2025,
+    "shipmentVolume": 15800,
+    "onTimeDeliveryRate": 90.8,
+    "regionalPerformance": 87.2,
+    "openExceptions": 201
+  },
+  {
+    "month": "Jul",
+    "year": 2025,
+    "shipmentVolume": 16500,
+    "onTimeDeliveryRate": 89.4,
+    "regionalPerformance": 84.6,
+    "openExceptions": 218
+  },
+  {
+    "month": "Aug",
+    "year": 2025,
+    "shipmentVolume": 17200,
+    "onTimeDeliveryRate": 88.9,
+    "regionalPerformance": 86.1,
+    "openExceptions": 234
+  },
+  {
+    "month": "Sep",
+    "year": 2025,
+    "shipmentVolume": 17800,
+    "onTimeDeliveryRate": 89.7,
+    "regionalPerformance": 88.4,
+    "openExceptions": 227
+  },
+  {
+    "month": "Oct",
+    "year": 2025,
+    "shipmentVolume": 18600,
+    "onTimeDeliveryRate": 87.3,
+    "regionalPerformance": 85.2,
+    "openExceptions": 251
+  },
+  {
+    "month": "Nov",
+    "year": 2025,
+    "shipmentVolume": 19400,
+    "onTimeDeliveryRate": 86.1,
+    "regionalPerformance": 83.8,
+    "openExceptions": 273
+  },
+  {
+    "month": "Dec",
+    "year": 2025,
+    "shipmentVolume": 20100,
+    "onTimeDeliveryRate": 85.5,
+    "regionalPerformance": 84.9,
+    "openExceptions": 289
+  }
+]
