@@ -16,6 +16,7 @@ Generate a fake dataset as a JSON file (src/data/metrics.json). 12 months of dat
 
 - v-app-bar at the top with a dashboard title and a month picker. 
 - the month picker should default to showing all months
+- Performance Analysis button to the left of the All Months button. When clicked, a modal is generate with text explaining possible reasons behind the open exceptions trend data.
 - When a specific month is selected, all cards and charts filter to that month. When "All"  is selected, show the full year. 
 - Below the app bar: a row of 4 summary cards (v-card) showing the key metrics (shipment volume, on-time delivery rates, regional performance, open exceptions)
 - Below the cards: 3 charts 

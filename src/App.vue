@@ -5,6 +5,16 @@
         <span class="text-h6 font-weight-bold">Fast Forward Logistics</span>
       </v-app-bar-title>
       <template v-slot:append>
+        <v-btn
+          variant="tonal"
+          color="primary"
+          size="small"
+          class="mr-3"
+          @click="showAnalysis = true"
+        >
+          <v-icon start>mdi-chart-line-variant</v-icon>
+          Performance Analysis
+        </v-btn>
         <v-select
           v-model="selectedMonth"
           :items="monthOptions"
@@ -17,6 +27,31 @@
         />
       </template>
     </v-app-bar>
+
+    <v-dialog v-model="showAnalysis" max-width="600">
+      <v-card>
+        <v-card-title class="text-h6">Performance Analysis: Open Exceptions</v-card-title>
+        <v-card-text class="text-body-1">
+          <p class="mb-3">
+            The upward trend in open exceptions correlates with the increase in overall shipment volume throughout 2025. Several factors likely contribute:
+          </p>
+          <ul class="ml-4 mb-3">
+            <li class="mb-2"><strong>Capacity strain:</strong> As shipment volume grows, warehouse and carrier capacity becomes stretched, leading to more handling errors and missed SLAs.</li>
+            <li class="mb-2"><strong>Seasonal demand spikes:</strong> Months with sharper volume increases (e.g., Q4) show disproportionate exception growth, suggesting staffing and routing haven't scaled proportionally.</li>
+            <li class="mb-2"><strong>New carrier onboarding:</strong> Rapid scaling often requires onboarding new carriers who have higher initial exception rates during their ramp-up period.</li>
+            <li class="mb-2"><strong>Route complexity:</strong> Expanding into new regions increases average transit complexity, raising the probability of delays and documentation errors.</li>
+            <li class="mb-2"><strong>System integration gaps:</strong> Higher volumes expose latent issues in EDI/API integrations, causing data mismatches that trigger exceptions.</li>
+          </ul>
+          <p>
+            <strong>Recommendation:</strong> Focus on carrier performance scorecards, proactive capacity planning for peak months, and automated exception triage to reduce resolution time.
+          </p>
+        </v-card-text>
+        <v-card-actions>
+          <v-spacer />
+          <v-btn variant="text" @click="showAnalysis = false">Close</v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
 
     <v-main>
       <v-container fluid class="pa-6">
@@ -120,6 +155,7 @@ const monthOptions = [
 ]
 
 const selectedMonth = ref<string>('all')
+const showAnalysis = ref(false)
 
 const filteredData = computed(() => {
   if (selectedMonth.value === 'all') return data
