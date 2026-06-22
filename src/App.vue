@@ -95,12 +95,18 @@
           </v-col>
         </v-row>
 
-        <!-- Chart Row 2: Full-width Area -->
+        <!-- Charts Row 2: Area + Line -->
         <v-row class="mt-4">
-          <v-col cols="12">
+          <v-col cols="12" md="6">
             <v-card class="pa-4" variant="elevated" elevation="1">
               <div class="text-subtitle-1 font-weight-medium mb-4">Open Exceptions Trend</div>
               <Line :data="areaChartData" :options="areaChartOptions" />
+            </v-card>
+          </v-col>
+          <v-col cols="12" md="6">
+            <v-card class="pa-4" variant="elevated" elevation="1">
+              <div class="text-subtitle-1 font-weight-medium mb-4">Regional Performance</div>
+              <Line :data="regionalChartData" :options="regionalChartOptions" />
             </v-card>
           </v-col>
         </v-row>
@@ -363,6 +369,50 @@ const areaChartOptions = {
   scales: {
     x: { ticks: { color: chartTextColor }, grid: { display: false } },
     y: { ticks: { color: chartTextColor }, grid: { color: chartGridColor } },
+  },
+}
+
+// Line chart - Regional Performance
+const regionalChartData = computed(() => {
+  const labels = data.map((d) => d.month)
+  const values = data.map((d) => d.regionalPerformance)
+
+  return {
+    labels,
+    datasets: [
+      {
+        label: 'Regional Performance %',
+        data: values,
+        borderColor: colors.accent,
+        backgroundColor: colors.accentLight,
+        tension: 0.3,
+        pointRadius: data.map((d) =>
+          selectedMonth.value === 'all' ? 3 : d.month === selectedMonth.value ? 7 : 3
+        ),
+        pointBackgroundColor: data.map((d) =>
+          selectedMonth.value !== 'all' && d.month === selectedMonth.value
+            ? colors.primary
+            : colors.accent
+        ),
+      },
+    ],
+  }
+})
+
+const regionalChartOptions = {
+  responsive: true,
+  maintainAspectRatio: true,
+  plugins: {
+    legend: { display: false },
+  },
+  scales: {
+    x: { ticks: { color: chartTextColor }, grid: { display: false } },
+    y: {
+      ticks: { color: chartTextColor, callback: (v: any) => `${v}%` },
+      grid: { color: chartGridColor },
+      min: 70,
+      max: 100,
+    },
   },
 }
 </script>
